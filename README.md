@@ -1,74 +1,127 @@
-<<<<<<< HEAD
-# CodeIgniter 4 Application Starter
+# POS SISTEM
 
-## What is CodeIgniter?
+**Aplikasi Point of Sale (POS) Berbasis Web**
 
-CodeIgniter is a PHP full-stack web framework that is light, fast, flexible and secure.
-More information can be found at the [official site](https://codeigniter.com).
+POS SISTEM adalah aplikasi berbasis web yang dikembangkan untuk membantu pengelolaan penjualan dan transaksi secara terstruktur. Aplikasi ini dibangun menggunakan framework CodeIgniter 4 dan PHP, dengan database MySQL sebagai penyimpanan data.
 
-This repository holds a composer-installable app starter.
-It has been built from the
-[development repository](https://github.com/codeigniter4/CodeIgniter4).
+## 📌 Fitur Utama
 
-More information about the plans for version 4 can be found in [CodeIgniter 4](https://forum.codeigniter.com/forumdisplay.php?fid=28) on the forums.
+- **Manajemen Produk** — Mengelola data produk yang digunakan dalam proses penjualan.
+- **Transaksi Penjualan** — Mendukung pencatatan transaksi penjualan.
+- **Pengelolaan Data** — Membantu pengelolaan data yang berkaitan dengan operasional penjualan.
+- **Antarmuka Berbasis Web** — Dapat diakses melalui browser.
+- **Database MySQL** — Menyimpan data aplikasi secara terstruktur.
 
-You can read the [user guide](https://codeigniter.com/user_guide/)
-corresponding to the latest version of the framework.
+*Catatan: Fitur yang tersedia mengikuti implementasi pada kode sumber aplikasi.*
 
-## Installation & updates
+## 🛠️ Teknologi yang Digunakan
 
-`composer create-project codeigniter4/appstarter` then `composer update` whenever
-there is a new release of the framework.
+| Teknologi | Keterangan |
+|---|---|
+| PHP | Bahasa pemrograman backend |
+| CodeIgniter 4 | Framework aplikasi web |
+| MySQL | Sistem manajemen basis data |
+| HTML5 | Struktur halaman web |
+| CSS3 | Pengaturan tampilan |
+| JavaScript | Interaksi pada halaman web |
+| Composer | Pengelolaan dependensi PHP |
 
-When updating, check the release notes to see if there are any changes you might need to apply
-to your `app` folder. The affected files can be copied or merged from
-`vendor/codeigniter4/framework/app`.
+## 📋 Persyaratan Sistem
 
-## Setup
+Sebelum menjalankan aplikasi, pastikan perangkat telah memiliki:
 
-Copy `env` to `.env` and tailor for your app, specifically the baseURL
-and any database settings.
+- PHP dengan versi yang sesuai dengan kebutuhan CodeIgniter 4.
+- Composer.
+- MySQL atau MariaDB.
+- Web server lokal, seperti Laragon.
+- Git untuk mengelola kode sumber.
 
-## Important Change with index.php
+## 🚀 Instalasi dan Menjalankan Aplikasi
 
-`index.php` is no longer in the root of the project! It has been moved inside the *public* folder,
-for better security and separation of components.
+### 1. Clone Repository
 
-This means that you should configure your web server to "point" to your project's *public* folder, and
-not to the project root. A better practice would be to configure a virtual host to point there. A poor practice would be to point your web server to the project root and expect to enter *public/...*, as the rest of your logic and the
-framework are exposed.
+Buka terminal, kemudian jalankan:
 
-**Please** read the user guide for a better explanation of how CI4 works!
+```bash
+git clone https://github.com/ardianaryanandaa-ship-it/-POS-SISTEM.git
+```
 
-## Repository Management
+### 2. Masuk ke Direktori Proyek
 
-We use GitHub issues, in our main repository, to track **BUGS** and to track approved **DEVELOPMENT** work packages.
-We use our [forum](http://forum.codeigniter.com) to provide SUPPORT and to discuss
-FEATURE REQUESTS.
+```bash
+cd -POS-SISTEM
+```
 
-This repository is a "distribution" one, built by our release preparation script.
-Problems with it can be raised on our forum, or as issues in the main repository.
+### 3. Instal Dependensi
 
-## Server Requirements
+```bash
+composer install
+```
 
-PHP version 8.2 or higher is required, with the following extensions installed:
+### 4. Konfigurasi Environment
 
-- [intl](http://php.net/manual/en/intl.requirements.php)
-- [mbstring](http://php.net/manual/en/mbstring.installation.php)
+Salin file `env` menjadi `.env` jika file `.env` belum tersedia.
 
-> [!WARNING]
-> - The end of life date for PHP 7.4 was November 28, 2022.
-> - The end of life date for PHP 8.0 was November 26, 2023.
-> - The end of life date for PHP 8.1 was December 31, 2025.
-> - If you are still using below PHP 8.2, you should upgrade immediately.
-> - The end of life date for PHP 8.2 will be December 31, 2026.
+Pada Windows PowerShell, jalankan:
 
-Additionally, make sure that the following extensions are enabled in your PHP:
+```powershell
+Copy-Item env .env
+```
 
-- json (enabled by default - don't turn it off)
-- [mysqlnd](http://php.net/manual/en/mysqlnd.install.php) if you plan to use MySQL
-- [libcurl](http://php.net/manual/en/curl.requirements.php) if you plan to use the HTTP\CURLRequest library
-=======
-# -POS-SISTEM
-Aplikasi Point of Sale (POS) untuk mengelola penjualan dan transaksi.
->>>>>>> 38b5a8eb4b7c0dae35e49b25bfa047b179c7f0c8
+Sesuaikan konfigurasi environment di file `.env`, termasuk pengaturan database dan base URL sesuai lingkungan pengembangan.
+
+### 5. Konfigurasi Database
+
+1. Jalankan MySQL melalui Laragon atau layanan database yang digunakan.
+2. Buat database untuk aplikasi POS SISTEM.
+3. Sesuaikan konfigurasi koneksi database pada file `.env`.
+4. Jika proyek menyediakan file SQL, import file tersebut ke database yang telah dibuat.
+
+### 6. Jalankan Aplikasi
+
+Gunakan server pengembangan CodeIgniter 4:
+
+```bash
+php spark serve
+```
+
+Buka browser dan akses:
+
+```text
+http://localhost:8080
+```
+
+Pastikan konfigurasi database dan persyaratan aplikasi sudah sesuai sebelum menjalankannya.
+
+## 📁 Struktur Proyek
+
+```text
+POS-SISTEM/
+├── app/              # Kode utama aplikasi
+├── public/           # File publik dan aset web
+├── tests/            # Pengujian aplikasi
+├── writable/         # File yang digunakan saat runtime
+├── composer.json     # Konfigurasi dependensi
+├── composer.lock     # Versi dependensi yang terkunci
+├── phpunit.xml.dist  # Konfigurasi pengujian
+├── preload.php       # Konfigurasi preload PHP
+├── spark             # CLI CodeIgniter 4
+└── README.md         # Dokumentasi proyek
+```
+
+## 🔒 Keamanan
+
+- Jangan mengunggah file `.env` yang berisi kredensial atau konfigurasi rahasia.
+- Jangan menyimpan kata sandi database atau API key langsung di kode sumber.
+- Gunakan konfigurasi environment yang sesuai untuk pengembangan maupun produksi.
+- Pastikan data transaksi dan informasi pelanggan dilindungi dengan baik.
+
+## 👨‍💻 Pengembang
+
+**Ardian Arya Nanda**
+
+Repository: [POS SISTEM](https://github.com/ardianaryanandaa-ship-it/-POS-SISTEM)
+
+---
+
+Dikembangkan sebagai proyek aplikasi berbasis web untuk mendukung pengelolaan penjualan dan transaksi.
